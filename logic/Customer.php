@@ -89,6 +89,17 @@ class Customer{
         $this -> password = $result[4];
     }
     
+    function consultAll(){
+        $this -> connection -> open();
+        $this -> connection -> execute($this -> customerDAO -> consultAll());
+        $this -> connection -> close();
+        $customers = array();
+        while(($result = $this -> connection -> extract()) != null){
+            array_push($customers, new Customer($result[0], $result[1], $result[2], $result[3], $result[4],""));
+        }
+        return $customers;
+    }
+    
     function consultMail($mail){
         $this -> connection -> open();
         $this -> connection -> execute($this -> customerDAO -> consultMail($mail));
@@ -125,9 +136,9 @@ class Customer{
         $this -> connection -> close();
     }
     
-    function deleteAccount(){
+    function deleteAccount($customer){
         $this -> connection -> open();
-        $this -> connection -> execute($this -> customerDAO -> deleteAccount());
+        $this -> connection -> execute($this -> customerDAO -> deleteAccount($customer));
         $this -> connection -> close();
     }
 }

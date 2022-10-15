@@ -37,6 +37,11 @@ class CustomerDAO{
                 from customer where id = '" . $this -> id . "'";
     }
     
+    function consultAll(){
+        return "select id, name, lastname, city, mail
+                from customer";
+    }
+    
     function consultMail($mail){
         return "select mail
                 from customer where mail = '" . $mail . "'";
@@ -65,7 +70,7 @@ class CustomerDAO{
                 where mail = '" . $mail . "'";
     }
     
-    function deleteAccount(){
-        return "delete from customer where id = '".$this -> id."'";
+    function deleteAccount($customer){
+        return "delete from customer where id = '".$customer."'";
     }
 }
