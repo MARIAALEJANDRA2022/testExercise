@@ -54,7 +54,7 @@ class CustomerDAO{
     
     function consultLastName($mail){
         return "select lastname
-                from customer where customer = '" . $mail . "'";
+                from customer where mail = '" . $mail . "'";
     }
     
     function edit(){

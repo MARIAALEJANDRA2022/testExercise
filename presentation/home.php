@@ -34,12 +34,7 @@ if (isset($_GET["error"])){
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary">Sign in</button>	
                             <button onclick="location.href='<?php echo "index.php?pid=" . base64_encode("presentation/register.php")?>'" class="btn btn-primary"> Sign up </button>
-                        </div>								
-                        <p class="text-center">							
-                            <a href="<?php echo "index.php?pid=" . base64_encode("presentation/recoverPassword.php") ?>"> 
-                                Did you forget the password?
-                            </a>
-                        </p>										
+                        </div>							
                     </form>									
                 </div>
             </div>

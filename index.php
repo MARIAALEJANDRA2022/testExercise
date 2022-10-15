@@ -1,13 +1,14 @@
 <?php
 session_start();
 require "logic/Customer.php";
+require "logic/passwordChange.php";
 require "persistence/Connection.php";
 $pagNoSession = array(
     "presentation/register.php",
-    "presentation/recoverPassword.php",
     "presentation/authenticate.php",
     "presentation/sendMail.php",
-    "presentation/passwordChange.php"
+    "presentation/passwordChange.php",
+    "presentation/passwordRecovery.php"
 );
 
 if (isset($_GET["sesion"]) && $_GET["sesion"] == 0) {
