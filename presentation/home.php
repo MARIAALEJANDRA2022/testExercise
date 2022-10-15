@@ -5,17 +5,17 @@ if (isset($_GET["error"])){
     $error = $_GET["error"];
 }
 ?>
-<div class="container">
-    <?php include "presentation/header.php";?>
+<div class="container d-flex justify-content-center align-items-center">
     <div class="row mt-4">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <h3>Authentication</h3>
                 </div>
+                </head>
                 <div class="card-body">
                     <form 
-                        action=<?php echo "index.php?pid=" . base64_encode("presentacion/autenticar.php")?> 
+                        action=<?php echo "index.php?pid=" . base64_encode("presentation/authenticate.php") ?> 
                         method="post">
                         <?php if ($error == 1) { ?>						
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -36,8 +36,9 @@ if (isset($_GET["error"])){
                             <button onclick="location.href='<?php echo "index.php?pid=" . base64_encode("presentation/register.php")?>'" class="btn btn-primary"> Sign up </button>
                         </div>								
                         <p class="text-center">							
-                            <a href="<?php echo "index.php?pid=" . base64_encode("presentacion/recuperarClave.php") ?>"> 
-                                Did you forget the password?</a>
+                            <a href="<?php echo "index.php?pid=" . base64_encode("presentation/recoverPassword.php") ?>"> 
+                                Did you forget the password?
+                            </a>
                         </p>										
                     </form>									
                 </div>
